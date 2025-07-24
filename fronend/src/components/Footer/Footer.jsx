@@ -18,11 +18,11 @@ const Footer = () => {
                 <h2 className='text-gray-200 text-lg font-semibold'>Quick Links</h2>
                 <br />
                 <ul className='px-4'>
-                    <li><a href="/" className='text-gray-300 font-semibold hover:text-[var(--color-primary)] hover:underline'>Home</a></li>
-                    <li><a href="#/about" className='text-gray-300 font-semibold hover:text-[var(--color-primary)] hover:underline'>About us</a></li>
-                    <li><a href="#/services" className='text-gray-300 font-semibold hover:text-[var(--color-primary)] hover:underline'>Services</a></li>
-                    <li><a href="#/founders" className='text-gray-300 font-semibold hover:text-[var(--color-primary)] hover:underline'>Founders</a></li>
-                    <li><a href="/contact" className='text-gray-300 font-semibold hover:text-[var(--color-primary)] hover:underline'>Contact Us</a></li>
+                    <li><a href="/#" className='text-gray-300 font-semibold hover:text-[var(--color-highlight)]'>Home</a></li>
+                    <li><a href="#/about" className='text-gray-300 font-semibold hover:text-[var(--color-highlight)]'>About us</a></li>
+                    <li><a href="#/services" className='text-gray-300 font-semibold hover:text-[var(--color-highlight)]'>Services</a></li>
+                    <li><a href="#/founders" className='text-gray-300 font-semibold hover:text-[var(--color-highlight)]'>Founders</a></li>
+                    <li><a href="#/contact" className='text-gray-300 font-semibold hover:text-[var(--color-highlight)]'>Contact Us</a></li>
 
                 </ul>
             </div>

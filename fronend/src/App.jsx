@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from './components/Navbar/Navbar'
 import Footer from './components/Footer/Footer'
+import StarsBackground from './components/StarsBackground'
 import { HashRouter as Router, Routes, Route } from "react-router-dom" 
 import {Home} from './pages/home'
 import {About} from './pages/about'
@@ -11,9 +12,10 @@ import { Contactus } from './pages/contactus'
 
 const App = () => {
   return (
-    <div className='flex flex-col min-h-screen'>
-      <div className='overflow-x-hidden items-center px-10 flex-grow'>
-        <Navbar/>
+    <div className='flex flex-col min-h-screen w-full bg-gradient-to-b from-black via-gray-900 to-gray-800 overflow-y-scroll scroll-smooth'>
+      <StarsBackground />
+      <Navbar/>
+      <div className='flex-grow w-full'>
         <Router>
           <Routes>
             <Route path='/' element={<Home/>}/>
