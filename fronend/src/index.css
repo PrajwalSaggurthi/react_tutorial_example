@@ -6,7 +6,3 @@
     --color-highlight: #f5f5f5;
 }
 
-body {
-  /* Use the rotated rocket PNG as the cursor, with hotspot at the tip */
-  cursor: url('./assets/rocket_icon.png'), auto;
-}
