@@ -2,33 +2,32 @@ export const NavbarMenu = [
     {
         id: 1,
         title: "Home",
-        link: "/#"
+        link: "#home"
     },
     {
         id: 2,
         title: "About us",
-        link: "#/about"
+        link: "#about"
     },
     {
         id: 3,
         title: "Services",
-        link: "#/services"
+        link: "#services"
     },
     {
         id: 4,
         title: "Founders",
-        link: "#/founders"
+        link: "#founders"
     },
     {
         id: 5,
         title: "Portfolio",
-        link: "#/portfolio"
+        link: "#portfolio"
     },
-
 ]
 
 export const NavContact_us = {
     id:6,
     title: "Contact US",
-    link: "#/contact"
+    link: "#contact"
 }

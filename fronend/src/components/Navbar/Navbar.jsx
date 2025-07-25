@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { NavbarMenu, NavContact_us} from '../../mockData/data'
 import logo from '../../assets/3d.jpeg'
 import { MdMenu } from 'react-icons/md';
@@ -6,13 +6,31 @@ import ResponsiveMenu from './ResponsiveMenu';
 
 const Navbar = () => {
     const [open, setOpen] = React.useState(false);
-  return (
+
+    useEffect(() => {
+      const handleAnchorClick = (e) => {
+        const anchor = e.target.closest('a[href^="#"]');
+        if (anchor) {
+          const id = anchor.getAttribute('href').replace('#', '');
+          const el = document.getElementById(id);
+          if (el) {
+            e.preventDefault();
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            setOpen(false);
+          }
+        }
+      };
+      document.addEventListener('click', handleAnchorClick);
+      return () => document.removeEventListener('click', handleAnchorClick);
+    }, []);
+
+    return (
   <>  
     <nav className='fixed w-full top-0 left-0 right-0 z-50 bg-black/60 backdrop-blur-md shadow-lg'>
         <div className='flex justify-between items-center px-3 sm:px-5 h-20 py-5 w-full'>
             {/* logo */}
             <div className='text-2xl flex items-center gap-1 font-bold py-6'>
-                <a href="/" className='flex hover:scale-105 duration-200'>
+                <a href="#home" className='flex hover:scale-105 duration-200'>
                     <img src={logo} alt="BrandDo" className="w-10 h-10 rounded-full object-cover shadow-xl shadow-[var(--color-primary)]"/>
                     <p className='text-shadow-lg py-1 text-white'>BrandDo</p>
                     <p className='text-[var(--color-primary)] text-shadow-lg py-1'>Creative</p>
@@ -39,12 +57,12 @@ const Navbar = () => {
             <div className='md:hidden hover:scale-105' onClick={() =>
                 setOpen(!open)
             }>
-                    <MdMenu className='text-4xl'/>
+                    <MdMenu className='text-4xl' color='white'/>
             </div>
         </div>
     </nav>
     {/*Mobile menu section*/}
-    <ResponsiveMenu open={open}/>
+    <ResponsiveMenu open={open} setOpen={setOpen}/>
   </>
 );
 }
