@@ -85,11 +85,9 @@ const AboutSection = () => {
               {item.text.split(new RegExp(`(${item.highlight.join('|')})`, 'g')).map((part, index) =>
                 item.highlight.includes(part) ? (
                   <span key={index} className="relative font-semibold highlight-container">
-                    <span className={`text-transparent bg-clip-text bg-gradient-to-r ${highlightGradient} highlight-text transition-all duration-300 group-hover:shadow-[0_0_16px_#38bdf8cc]`}>
+                    <span className={`text-transparent bg-clip-text bg-gradient-to-r ${highlightGradient} highlight-text transition-all duration-300`}>
                       {part}
                     </span>
-                    {/* Subtle animated nebula/aurora effect behind the highlight */}
-                    <span className="absolute inset-0 highlight-aurora opacity-0 group-hover:opacity-80 transition-opacity duration-500"></span>
                   </span>
                 ) : (
                   part
@@ -114,17 +112,8 @@ const AboutSection = () => {
         .animate-nebula-fade { animation: fadeIn 1.2s cubic-bezier(.4,1.6,.6,1) both; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         /* Highlight aurora effect */
-        .highlight-aurora {
-          background: radial-gradient(circle at 50% 50%, #38bdf844 0%, #a78bfa55 70%, transparent 100%);
-          filter: blur(12px);
-          border-radius: 8px;
-          z-index: -1;
-        }
         .highlight-container:hover .highlight-text {
-          filter: brightness(1.2) drop-shadow(0 0 8px #38bdf8cc);
-        }
-        .highlight-container:hover .highlight-aurora {
-          opacity: 1;
+          filter: brightness(1.2);
         }
         /* Animated gradient text for headings */
         .animated-gradient-text {
